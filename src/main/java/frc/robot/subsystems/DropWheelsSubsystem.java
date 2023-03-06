@@ -4,10 +4,13 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
-import frc.robot.RobotContainer;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
+
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
@@ -19,8 +22,18 @@ public class DropWheelsSubsystem extends SubsystemBase {
 
   public static DifferentialDrive dropWheelDrive = new DifferentialDrive(rightDrop, leftDrop);
 
-  public DropWheelsSubsystem() {
+public Compressor compressor = new Compressor(PneumaticsModuleType.CTREPCM);
+public static DoubleSolenoid backDropWheels = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 6, 5);
+public static DoubleSolenoid frontDropWheels = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 7, 4);
 
+
+  public DropWheelsSubsystem() {
+    dropWheelDrive.setSafetyEnabled(false);
+
+    
+   // public void initDefaultCommand()  {
+    //  setDefaultCommand(new TwoTeleOpDriveCommand);
+   // }
   }
 
   @Override

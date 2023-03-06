@@ -4,12 +4,19 @@
 
 package frc.robot;
 
-import frc.robot.Constants.OperatorConstants;
+// import frc.robot.Constants.OperatorConstants;
+import frc.robot.commands.ArmCommand;
+import frc.robot.commands.AutoBasicDropConeCommand;
+import frc.robot.commands.AutoDriveForwardCommand;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
-import frc.robot.commands.TeleopDriveCommand;
+import frc.robot.commands.GrabberCommand;
+import frc.robot.commands.PracticeAutonomousCommand;
+import frc.robot.commands.TeleOpDriveCommand;
+import frc.robot.subsystems.ArmSubsytem;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.GrabberSubsystem;
 import frc.robot.subsystems.DropWheelsSubsystem;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
@@ -29,17 +36,30 @@ public class RobotContainer {
   // The robot's subsystems are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   public final static DriveSubsystem m_driveSubsystem = new DriveSubsystem();
+  public final static DropWheelsSubsystem m_dropWheelsSubsystem = new DropWheelsSubsystem();
+  public final static ArmSubsytem m_ArmSubsytem = new ArmSubsytem();
+  public final static GrabberSubsystem m_grabberSubsystem = new GrabberSubsystem();
 
   //The robot's commands are defined here...
-  public TeleopDriveCommand m_TeleopDriveCommand = new TeleopDriveCommand();
+  //public TeleopDriveCommand m_TeleopDriveCommand = new TeleopDriveCommand();
+
+  // Teleoperated Commands
+  public TeleOpDriveCommand m_TeleopDriveCommand = new TeleOpDriveCommand();
+  public ArmCommand m_ArmCommand = new ArmCommand();
+  public GrabberCommand m_GrabberCommand = new GrabberCommand();
+
+  // Autonomous Commands
+  public PracticeAutonomousCommand m_AutonomousCommand = new PracticeAutonomousCommand();
+  public AutoBasicDropConeCommand m_AutoBasicDropConeCommand = new AutoBasicDropConeCommand();
+
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
-  private final CommandXboxController m_driverController =
-      new CommandXboxController(OperatorConstants.kDriverControllerPort);
+ // private final CommandXboxController m_driverController =
+  //    new CommandXboxController(OperatorConstants.kDriverControllerPort);
 
   //Controllers (Xbox Controller and Flight Stick)
-  public static XboxController wheelsGoBrr = new XboxController(0);
-  public static Joystick armsGoBrr = new Joystick(1);
+  public static XboxController m_xboxController = new XboxController(0);
+  public static Joystick m_joystick = new Joystick(1);
   
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -63,7 +83,7 @@ public class RobotContainer {
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
-    m_driverController.b().whileTrue(m_exampleSubsystem.exampleMethodCommand());
+   // m_driverController.b().whileTrue(m_exampleSubsystem.exampleMethodCommand());
   }
 
   /**
@@ -73,6 +93,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return Autos.exampleAuto(m_exampleSubsystem);
+      return m_AutoBasicDropConeCommand;
   }
 }

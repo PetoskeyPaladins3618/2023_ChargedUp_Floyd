@@ -13,12 +13,19 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-  public static final int RIGHT_FRONT = 2;
-  public static final int LEFT_FRONT = 3;
-  public static final int RIGHT_BACK = 6;
-  public static final int LEFT_BACK = 7;
-  public static final int RIGHT_DROP = 4;
-  public static final int LEFT_DROP = 5;
+  public static final int RIGHT_FRONT = 1;
+  public static final int LEFT_FRONT = 6;
+  public static final int RIGHT_BACK = 2;
+  public static final int LEFT_BACK = 5 ;
+  public static final int RIGHT_DROP = 3;
+  public static final int LEFT_DROP = 4;    
+  public static final int ARM = 13;
+  public static final int ARM_LIMIT_SWITCH = 0;
+  public static final int ARM_ENCODER = 2;
+  
+  public static final double ENCODER_CONVERSION_TO_INCHES = 3.1;
+  public static final double ENCODER_CONVERSION_TO_DEGREES = 1/169.8;
+
 
 
   public static class OperatorConstants {
