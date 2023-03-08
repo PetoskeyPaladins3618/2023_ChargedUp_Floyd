@@ -100,20 +100,20 @@ public class TeleOpDriveCommand extends CommandBase {
   
    
    if ((RobotContainer.m_xboxController.getLeftY() >= 0.15) || (RobotContainer.m_xboxController.getLeftY() <= -.15)) {
-    movementSpeed = -0.4;
+    movementSpeed = -0.3;
   }
   else {
     movementSpeed = 0;
   }
 
   if ((RobotContainer.m_xboxController.getLeftX() >= .2) || (RobotContainer.m_xboxController.getLeftX() <= -.2)) {
-    strafeSpeed = 0.4;  }
+    strafeSpeed = 0.3;  }
   else {
     strafeSpeed = 0;
   }
   
   if ((RobotContainer.m_xboxController.getRightX() >= .15) || (RobotContainer.m_xboxController.getRightX() <= -.15)) {
-    turnSpeed = 0.4;
+    turnSpeed = 0.3;
   }
   else {
     turnSpeed = 0;

@@ -14,11 +14,11 @@ public class AutoBasicDropConeCommand extends SequentialCommandGroup {
   public AutoBasicDropConeCommand() {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
-    addCommands(new AutoArmMoveCommand(84));
+    addCommands(new AutoArmMoveCommand(85));
     addCommands(new AutoDriveForwardCommand(10));
-    addCommands(new AutoArmMoveCommand(84));
+    addCommands(new AutoArmMoveCommand(85));
     addCommands(new AutoGrabberDropCommand());
-    addCommands(new AutoDriveBackwardCommand(150));
+    addCommands(new AutoDriveBackwardCommand(130));
     addCommands(new AutoGrabberCloseCommand());
     addCommands(new AutoArmMoveCommand(0));
   }

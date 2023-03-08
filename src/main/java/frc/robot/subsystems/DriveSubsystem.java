@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 // import frc.robot.RobotContainer; 
 //import frc.robot.RobotContainer;
+import frc.robot.RobotContainer;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.RelativeEncoder;
@@ -106,7 +107,7 @@ public DriveSubsystem() {
 
       //SmartDashboard.putNumber("LeftX", RobotContainer.m_xboxController.getLeftX());
       //SmartDashboard.putNumber("LeftY", RobotContainer.m_xboxController.getLeftY());
-      //SmartDashboard.putNumber("RightX", RobotContainer.m_xboxController.getRightX());
+      SmartDashboard.putNumber("RightX", RobotContainer.m_xboxController.getRightX());
     //Gyro Values Smart Dashboards
       //SmartDashboard.putNumber(key: "RobotAngle", gyroRawAngle);
   }

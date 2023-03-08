@@ -6,7 +6,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.Constants;
+//import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.ArmSubsytem;
 
@@ -46,6 +46,9 @@ public class ArmCommand extends CommandBase {
     SmartDashboard.putBoolean("ArmLimitSwitch", !RobotContainer.m_ArmSubsytem.armLimitSwitch.get());
     SmartDashboard.putNumber("True Arm Position", ArmSubsytem.armEncoder.getAbsolutePosition() - RobotContainer.m_ArmSubsytem.encoderOffset);
    
+    // if (RobotContainer.m_joystick.getRawButton(5)) {
+      
+    // }
     /* 
      if (RobotContainer.m_joystick.getRawButton(1))  {
       ArmSubsytem.arm.set(1);
